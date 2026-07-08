@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Law Firm</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0F172A",   /* deep navy */
+            accent: "#C9A227"     /* gold */
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white text-gray-900">
+<!-- STICKY STYLED NAVIGATION HEADER --> 
+<header class="w-full bg-[#f4efef] border-b border-[#0F2D52]/5 sticky top-0 z-50 backdrop-blur-md shadow-[0_4px_30px_rgba(15,45,82,0.02)] transition-all duration-300"> 
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between font-['Inter',sans-serif]"> 
+    
+    <!-- Logo --> 
+    <a href="#" class="flex items-center gap-2 group focus:outline-none" aria-label="Law Firm Home"> 
+      <img src="thumbnails/ALC.jpeg" alt="Premium Corporate Law Firm Logo" class="h-9 sm:h-10 md:h-11 w-auto object-contain transform scale-100 group-hover:scale-[1.02] transition-transform duration-300 ease-out" loading="eager" /> 
+    </a> 
+
+    <!-- Desktop Navigation Menu Elements --> 
+    <nav class="hidden md:flex items-center gap-10 text-[14px] font-medium tracking-wide text-[#0F2D52]/90"> 
+      <a href="#" class="text-[#C8A34D] transition-colors relative py-2">Home</a> 
+      <a href="#" class="hover:text-[#C8A34D] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1.5px] after:bg-[#C8A34D] hover:after:w-full hover:after:left-0 after:transition-all after:duration-300">About</a> 
+      <a href="#" class="hover:text-[#C8A34D] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1.5px] after:bg-[#C8A34D] hover:after:w-full hover:after:left-0 after:transition-all after:duration-300">Practice Areas</a> 
+      <a href="#" class="hover:text-[#C8A34D] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1.5px] after:bg-[#C8A34D] hover:after:w-full hover:after:left-0 after:transition-all after:duration-300">Cases</a> 
+      <a href="#" class="hover:text-[#C8A34D] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1.5px] after:bg-[#C8A34D] hover:after:w-full hover:after:left-0 after:transition-all after:duration-300">Contact</a> 
+    </nav> 
+
+    <!-- Premium CTA Button --> 
+    <a href="#" class="hidden md:inline-flex items-center justify-center bg-[#C8A34D] text-white text-xs uppercase tracking-widest font-bold px-6 py-3.5 rounded-[12px] shadow-[0_4px_14px_rgba(200,163,77,0.25)] hover:bg-[#0F2D52] hover:shadow-[0_4px_14px_rgba(15,45,82,0.2)] transition-all duration-300 transform hover:-translate-y-0.5"> 
+      Free Consultation 
+    </a> 
+
+    <!-- Animated Hamburger Trigger Button --> 
+    <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 focus:outline-none p-2 relative z-50" aria-label="Toggle Menu"> 
+      <span class="w-6 h-0.5 bg-[#0F2D52] transition-all duration-300 origin-left"></span> 
+      <span class="w-6 h-0.5 bg-[#0F2D52] transition-all duration-300"></span> 
+      <span class="w-6 h-0.5 bg-[#0F2D52] transition-all duration-300 origin-left"></span> 
+    </button> 
+  </div> 
+
+  <!-- Mobile Full-Height Drawer --> 
+<div id="mobileMenu" class="md:hidden fixed top-0 left-0 w-80 h-screen bg-[#f4efef] px-6 pt-24 shadow-xl transition-transform duration-300 ease-in-out -translate-x-full flex flex-col gap-6"> 
+  
+  <!-- Top Image Container -->
+  <div class="w-full flex items-center justify-center">
+    <img src="thumbnails/ALC.jpeg" alt="Premium Corporate Law Firm Logo" class="h-12 w-auto object-contain" />
+  </div>
+
+  <!-- Mobile Navigation Menu Elements --> 
+  <nav class="flex flex-col gap-4 text-sm font-semibold tracking-wide text-[#0F2D52]"> 
+    <a href="#" class="mobile-link text-[#C8A34D] py-2">Home</a> 
+    <a href="#" class="mobile-link hover:text-[#C8A34D] transition-colors py-2 border-b border-gray-50">About</a> 
+    <a href="#" class="mobile-link hover:text-[#C8A34D] transition-colors py-2 border-b border-gray-50">Practice Areas</a> 
+    <a href="#" class="mobile-link hover:text-[#C8A34D] transition-colors py-2 border-b border-gray-50">Cases</a> 
+    <a href="#" class="mobile-link hover:text-[#C8A34D] transition-colors py-2 pb-4">Contact</a> 
+    <a href="#" class="mobile-link mt-2 bg-[#C8A34D] text-white py-3.5 rounded-[12px] text-center text-xs uppercase tracking-widest font-bold shadow-md hover:bg-[#0F2D52] transition-colors"> Free Consultation </a> 
+  </nav> 
+</div>
+
+
+</header>
+
+
+
+<!-- VIEWPORT-OPTIMIZED PREMIUM HERO SECTION -->
+<section class="relative bg-white overflow-hidden flex items-center min-h-[calc(100vh-80px)] py-8 font-['Inter',sans-serif]">
+  
+  <!-- Subtle Architectural Accent Rings for depth -->
+  <div class="absolute right-[-5%] top-[-5%] w-[500px] h-[500px] border border-[#0F2D52]/5 rounded-full pointer-events-none hidden xl:block"></div>
+
+  <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+    <!-- TEXT CONTENT CONTAINER -->
+    <div class="z-10 space-y-6">
+      
+      <!-- Subtitle Tag: Minimal, high-end tracking spacing layout -->
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">
+          Premier Legal Representation
+        </span>
+      </div>
+      
+      <!-- Heading Element: Prestigious Serif Scales utilizing Playfair Display -->
+      <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-normal leading-[1.15] text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        Trusted Legal Solutions for <span class="italic font-light">Global Enterprises</span> & Individuals
+      </h1>
+
+      <!-- Supporting Body Text: Clean Inter layout with premium line height -->
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-normal pt-1">
+        Protecting your multi-jurisdictional assets and commercial operations with elite, highly dedicated advocacy tailored across Tanzania.
+      </p>
+
+      <!-- CTA ACTION BUTTONS: 12px Rounded Corner architecture with physical hover lift -->
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <a href="#"
+           class="bg-[#C8A34D] text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-[12px] shadow-[0_4px_20px_rgba(200,163,77,0.25)] hover:bg-[#0F2D52] hover:shadow-[0_4px_20px_rgba(15,45,82,0.2)] transition-all duration-300 transform hover:-translate-y-0.5 text-center whitespace-nowrap">
+          Book Consultation
+        </a>
+
+        <a href="tel:+255"
+           class="border border-[#0F2D52]/20 text-[#0F2D52] text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-[12px] hover:bg-[#0F2D52] hover:text-white hover:border-[#0F2D52] transition-all duration-300 transform hover:-translate-y-0.5 text-center whitespace-nowrap">
+          Call Chambers
+        </a>
+      </div>
+    </div>
+
+    <!-- IMAGE VISUAL FRAME: Scaled responsively to stay perfectly inside viewport boundaries -->
+    <div class="relative w-full flex justify-center md:justify-end">
+      
+      <!-- Asymmetric Frame Background Layer Box -->
+      <div class="absolute -top-4 -left-4 right-4 bottom-4 border border-[#C8A34D]/20 rounded-[14px] -z-10 hidden lg:block transform translate-x-2 translate-y-2"></div>
+      
+      <!-- Bound down max-height dynamically so it never exceeds modern laptop dimensions -->
+       <img
+          src="thumbnails/ladyjustice.webp" 
+          alt="Lady Justice statue symbolizing fair corporate and private legal representation"
+          class="w-full h-full object-cover transform scale-100 hover:scale-102 transition-transform duration-700 ease-out"
+        />
+
+  </div>
+</section>
+
+<!-- TRUST INDICATORS SECTION -->
+<section class="bg-white py-16 relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <!-- Subtle design anchor line consistent with elite institutional platforms -->
+  <div class="max-w-7xl mx-auto px-6 mb-10">
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-[#0F2D52]/10 to-transparent"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <!-- Clean, spacious 5-column grid alignment layout -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 lg:gap-8">
+
+      <!-- Item 1: Longevity -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.03)] hover:shadow-[0_12px_40px_rgba(15,45,82,0.06)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <p class="text-3xl md:text-4xl font-light text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            15+
+          </p>
+          <div class="w-4 h-[1.5px] bg-[#C8A34D] mt-2 group-hover:w-8 transition-all duration-300"></div>
+        </div>
+        <p class="text-[11px] uppercase tracking-[0.15em] font-bold text-slate-500 mt-6 leading-relaxed">
+          Years of Advisory
+        </p>
+      </div>
+
+      <!-- Item 2: Operations Scope -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.03)] hover:shadow-[0_12px_40px_rgba(15,45,82,0.06)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <p class="text-3xl md:text-4xl font-light text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            2,000+
+          </p>
+          <div class="w-4 h-[1.5px] bg-[#C8A34D] mt-2 group-hover:w-8 transition-all duration-300"></div>
+        </div>
+        <p class="text-[11px] uppercase tracking-[0.15em] font-bold text-slate-500 mt-6 leading-relaxed">
+          Briefs Executed
+        </p>
+      </div>
+
+      <!-- Item 3: Retainer Success metrics -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.03)] hover:shadow-[0_12px_40px_rgba(15,45,82,0.06)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <p class="text-3xl md:text-4xl font-light text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            98%
+          </p>
+          <div class="w-4 h-[1.5px] bg-[#C8A34D] mt-2 group-hover:w-8 transition-all duration-300"></div>
+        </div>
+        <p class="text-[11px] uppercase tracking-[0.15em] font-bold text-slate-500 mt-6 leading-relaxed">
+          Success Track
+        </p>
+      </div>
+
+      <!-- Item 4: Jurisdiction standing -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.03)] hover:shadow-[0_12px_40px_rgba(15,45,82,0.06)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <p class="text-3xl md:text-4xl font-light text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            High Court
+          </p>
+          <div class="w-4 h-[1.5px] bg-[#C8A34D] mt-2 group-hover:w-8 transition-all duration-300"></div>
+        </div>
+        <p class="text-[11px] uppercase tracking-[0.15em] font-bold text-slate-500 mt-6 leading-relaxed">
+          Licensed Council
+        </p>
+      </div>
+
+      <!-- Item 5: Continuous Coverage -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.03)] hover:shadow-[0_12px_40px_rgba(15,45,82,0.06)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <p class="text-3xl md:text-4xl font-light text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            24/7
+          </p>
+          <div class="w-4 h-[1.5px] bg-[#C8A34D] mt-2 group-hover:w-8 transition-all duration-300"></div>
+        </div>
+        <p class="text-[11px] uppercase tracking-[0.15em] font-bold text-slate-500 mt-6 leading-relaxed">
+          Corporate Support
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM PRACTICE AREAS SECTION -->
+<section class="bg-white py-24 relative font-['Inter',sans-serif]">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Header: Clean institutional layout with generous breathing room -->
+    <div class="max-w-3xl mb-16 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Chamber Specializations</span>
+      </div>
+      <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        Areas of Expertise
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal pt-1">
+        Comprehensive legal architecture engineered precisely to safeguard corporate entities, international investors, and private wealth portfolios across East Africa.
+      </p>
+    </div>
+
+    <!-- 3-Column Luxury Card Grid Matrix -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1: Corporate Law -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Corporate & M&A</h3>
+          <p class="mt-3 text-sm text-slate-500 leading-relaxed font-light">Bespoke statutory incorporation structures, complex cross-border due diligence frameworks, and corporate governance compliance protocols.</p>
+        </div>
+        <a href="#" class="inline-flex items-center mt-8 text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+          Explore Briefing <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+        </a>
+      </div>
+
+      <!-- Card 2: Family & Wealth Architecture -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Family & Wealth Protection</h3>
+          <p class="mt-3 text-sm text-slate-500 leading-relaxed font-light">Discreet and elite management of high-net-worth estate preservation, sensitive marital restructuring, and multi-party guardianship parameters.</p>
+        </div>
+        <a href="#" class="inline-flex items-center mt-8 text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+          Explore Briefing <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+        </a>
+      </div>
+
+      <!-- Card 3: White Collar & Executive Defense -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Executive Defense Briefs</h3>
+          <p class="mt-3 text-sm text-slate-500 leading-relaxed font-light">Aggressive, sophisticated legal strategy defending corporate executives and companies against critical statutory or regulatory compliance audits.</p>
+        </div>
+        <a href="#" class="inline-flex items-center mt-8 text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+          Explore Briefing <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+        </a>
+      </div>
+
+      <!-- Card 4: Civil & Commercial Litigation -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Commercial Litigation</h3>
+          <p class="mt-3 text-sm text-slate-500 leading-relaxed font-light">Resolution of complex commercial disputes through institutional arbitration boards, trial motions, and formidable court advocacy.</p>
+        </div>
+        <a href="#" class="inline-flex items-center mt-8 text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+          Explore Briefing <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+        </a>
+      </div>
+
+      <!-- Card 5: Infrastructure & Land Title Law -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Infrastructure & Property</h3>
+          <p class="mt-3 text-sm text-slate-500 leading-relaxed font-light">Title clearance validations, sovereign concessions, real estate asset acquisition due diligence, and boundary dispute resolutions.</p>
+        </div>
+        <a href="#" class="inline-flex items-center mt-8 text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+          Explore Briefing <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+        </a>
+      </div>
+
+      <!-- Card 6: IP Protection & International Tax -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">IP & Global Tax Advisory</h3>
+          <p class="mt-3 text-sm text-slate-500 leading-relaxed font-light">Cross-border enterprise planning, double-taxation treaty alignment metrics, and protective filings for trademarks, patents, and copyright profiles.</p>
+        </div>
+        <a href="#" class="inline-flex items-center mt-8 text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+          Explore Briefing <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+        </a>
+      </div>
+
+    </div> <!-- Close Practice Areas Grid -->
+  </div> <!-- Close Container -->
+</section> <!-- Close Practice Areas Section -->
+
+<!-- WHY CHOOSE US SECTION -->
+<section class="bg-[#0F2D52]/[0.02] py-24 relative overflow-hidden font-['Inter',sans-serif]">
+  <!-- Subtle design vector anchor for luxury texture -->
+  <div class="absolute inset-0 bg-[radial-gradient(#C8A34D_0.5px,transparent_0.5px)] [background-size:32px_32px] opacity-[0.03]"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    
+    <!-- Section Heading Block -->
+    <div class="max-w-3xl mb-16 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Institutional Core Values</span>
+      </div>
+      <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        Why Partners Choose Our Counsel
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal pt-1">
+        Distinct strategic parameters engineered to navigate sensitive regulatory climates and secure clear resolution matrices for high-stakes portfolios.
+      </p>
+    </div>
+
+    <!-- 3-Column Premium Grid Alignment Layout -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Item 1: Discretion -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_16px_40px_rgba(15,45,82,0.04)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex gap-5 items-start transform hover:-translate-y-0.5">
+        <div class="text-[#C8A34D] shrink-0 p-2.5 bg-[#C8A34D]/5 rounded-[10px] transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-normal text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Absolute Discretion</h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed">All strategic configurations, transaction workflows, and corporate records are protected under absolute professional legal privilege.</p>
+        </div>
+      </div>
+
+      <!-- Item 2: Financial Transparency -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_16px_40px_rgba(15,45,82,0.04)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex gap-5 items-start transform hover:-translate-y-0.5">
+        <div class="text-[#C8A34D] shrink-0 p-2.5 bg-[#C8A34D]/5 rounded-[10px] transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-normal text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Transparent Pricing</h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed">Fee structures are fully mapped from execution. Clear, value-focused billing milestones prevent surprise retainer friction points.</p>
+        </div>
+      </div>
+
+      <!-- Item 3: Elite Direct Access -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_16px_40px_rgba(15,45,82,0.04)] hover:border-[#C8A34D]/30 transition-all duration-300 group flex gap-5 items-start transform hover:-translate-y-0.5">
+        <div class="text-[#C8A34D] shrink-0 p-2.5 bg-[#C8A34D]/5 rounded-[10px] transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-normal text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Direct Communication</h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed">Unrestricted access pipelines to leading advocates guarantee your board receives responsive analytical brief updates.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM ABOUT THE FIRM SECTION -->
+<section class="bg-white py-24 relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <!-- Subtle decorative architectural background ring -->
+  <div class="absolute left-[-10%] bottom-[-10%] w-[500px] h-[500px] border border-[#0F2D52]/5 rounded-full pointer-events-none hidden xl:block"></div>
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+    <!-- IMAGE SIDE (5 Columns wide - Framed with premium geometry padding) -->
+    <div class="lg:col-span-5 relative w-full flex justify-center order-2 lg:order-1 pt-8 lg:pt-0">
+      
+      <!-- Asymmetric Frame Background Layer Box -->
+      <div class="absolute -top-4 -left-4 right-4 bottom-4 border border-[#C8A34D]/20 rounded-[14px] -z-10 hidden lg:block transform translate-x-1.5 translate-y-1.5"></div>
+      
+      <div class="relative w-full max-w-[440px] aspect-[3/4] shadow-[0_20px_50px_rgba(15,45,82,0.04)] rounded-[14px] overflow-hidden border border-[#0F2D52]/5 bg-slate-50">
+        <!-- Handshake image asset directly loaded with smooth zoom scale -->
+        <img
+          src="thumbnails/handshake.jpg"
+          alt="Professional legal handshake closing an agreement with institutional trust"
+          class="w-full h-full object-cover transform scale-100 hover:scale-102 transition-transform duration-700 ease-out"
+        />
+      </div>
+    </div>
+
+    <!-- TEXT SIDE (7 Columns wide for an open layout prospectus) -->
+    <div class="lg:col-span-7 space-y-6 order-1 lg:order-2">
+      
+      <!-- Section Header -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+          <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Institutional Profile</span>
+        </div>
+        <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+          About the Firm
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-normal pt-1">
+          Built upon an unyielding foundation of absolute integrity, meticulous precision, and results-driven practice, our chambers have served international enterprises, sovereign investors, and high-net-worth families across East Africa for over a decade.
+        </p>
+      </div>
+
+      <!-- Asymmetric Two-Column Meta Grid for Info Blocks -->
+      <div class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-6 border-t border-[#0F2D52]/10 pt-8">
+        
+        <!-- History -->
+        <div class="space-y-2 group">
+          <h3 class="font-normal text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            Chamber History
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-500 font-light leading-relaxed">
+            Established with a singular focus on delivering premium, highly sophisticated legal architecture across major industrial and financial hubs in Tanzania.
+          </p>
+        </div>
+
+        <!-- Mission -->
+        <div class="space-y-2 group">
+          <h3 class="font-normal text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            Our Mission
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-500 font-light leading-relaxed">
+            To vigorously mitigate legal exposures, protect complex multi-jurisdictional assets, and deliver systemic resolution protocols for our partners.
+          </p>
+        </div>
+
+        <!-- Values -->
+        <div class="space-y-2 group">
+          <h3 class="font-normal text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            Core Values
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-500 font-light leading-relaxed">
+            Uncompromising professional discretion, absolute transactional confidentiality, meticulous tactical alignment, and uncompromised excellence.
+          </p>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="space-y-2 group">
+          <h3 class="font-normal text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            Executive Performance
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-500 font-light leading-relaxed">
+            Corporate leaders rely on our chambers for our formidable court standing, highly transparent pricing structures, and elite courtroom execution records.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Call To Action: 12px Rounded corner accent with smooth translation push -->
+      <div class="pt-6">
+        <a href="#"
+           class="inline-flex items-center justify-center bg-[#0F2D52] text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-[12px] shadow-[0_4px_14px_rgba(15,45,82,0.15)] hover:bg-[#C8A34D] hover:shadow-[0_4px_14px_rgba(200,163,77,0.2)] transition-all duration-300 transform hover:-translate-y-0.5">
+          Book Consultation Briefing
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- PREMIUM MEET OUR ADVOCATES SECTION -->
+<section class="bg-white py-24 relative font-['Inter',sans-serif]">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Header Block -->
+    <div class="max-w-3xl mb-16 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Chamber Partners</span>
+      </div>
+      <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        Meet Our Advocates
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal pt-1">
+        Highly credentialed legal professionals and litigators trained to safeguard enterprise capital, manage corporate regulatory audits, and represent briefs with absolute discretion.
+      </p>
+    </div>
+
+    <!-- 3-Column Luxury Card Grid Matrix -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
+      <!-- Card 1: John Mwangi -->
+      <div class="bg-white border border-[#0F2D52]/5 rounded-[12px] overflow-hidden shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <!-- Image Container wrapping your provided profile asset -->
+          <div class="w-full h-80 overflow-hidden bg-slate-50 relative border-b border-[#0F2D52]/5">
+            <img src="thumbnails/mwangi.jpg"
+                 class="w-full h-full object-cover transform scale-100 group-hover:scale-103 transition-transform duration-700 ease-out"
+                 alt="John Mwangi - Senior Partner, Corporate Law">
+          </div>
+
+          <div class="p-8">
+            <h3 class="font-normal text-2xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+              John Mwangi
+            </h3>
+            <p class="text-xs uppercase tracking-[0.15em] font-bold text-[#C8A34D] mt-1.5">
+              Senior Partner
+            </p>
+
+            <!-- Clean, Uncluttered Bio Elements built on an 8px alignment structure -->
+            <div class="mt-6 text-sm text-slate-500 space-y-3 border-t border-[#0F2D52]/5 pt-5 font-light">
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Focus</span><span class="text-right">Corporate & M&A</span></div>
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Tenure</span><span>12+ Years Experience</span></div>
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Credentials</span><span>LLB, LLM (Commercial)</span></div>
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Languages</span><span>English, Swahili</span></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="px-8 pb-8 pt-2">
+          <a href="#"
+             class="inline-flex items-center text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+            View Credentials <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Amina Hassan -->
+      <div class="bg-white border border-[#0F2D52]/5 rounded-[12px] overflow-hidden shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="w-full h-80 overflow-hidden bg-slate-50 relative border-b border-[#0F2D52]/5">
+            <img src="thumbnails/amina.jpg"
+                 class="w-full h-full object-cover transform scale-100 group-hover:scale-103 transition-transform duration-700 ease-out"
+                 alt="Amina Hassan - Litigation Counsel">
+          </div>
+
+          <div class="p-8">
+            <h3 class="font-normal text-2xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+              Amina Hassan
+            </h3>
+            <p class="text-xs uppercase tracking-[0.15em] font-bold text-[#C8A34D] mt-1.5">
+              Litigation Counsel
+            </p>
+
+            <div class="mt-6 text-sm text-slate-500 space-y-3 border-t border-[#0F2D52]/5 pt-5 font-light">
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Focus</span><span class="text-right">Criminal & Civil Trials</span></div>
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Tenure</span><span>9+ Years Experience</span></div>
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Credentials</span><span>LLB, Dip. Legal Practice</span></div>
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Languages</span><span>English, Swahili</span></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="px-8 pb-8 pt-2">
+          <a href="#"
+             class="inline-flex items-center text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+            View Credentials <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: David Kimaro -->
+      <div class="bg-white border border-[#0F2D52]/5 rounded-[12px] overflow-hidden shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="w-full h-80 overflow-hidden bg-slate-50 relative border-b border-[#0F2D52]/5">
+            <img src="thumbnails/kimaro.jpg"
+                 class="w-full h-full object-cover transform scale-100 group-hover:scale-103 transition-transform duration-700 ease-out"
+                 alt="David Kimaro - Family Law Specialist">
+          </div>
+
+          <div class="p-8">
+            <h3 class="font-normal text-2xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+              David Kimaro
+            </h3>
+            <p class="text-xs uppercase tracking-[0.15em] font-bold text-[#C8A34D] mt-1.5">
+              Family Law Specialist
+            </p>
+
+            <div class="mt-6 text-sm text-slate-500 space-y-3 border-t border-[#0F2D52]/5 pt-5 font-light">
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Focus</span><span class="text-right">Family & Estate Planning</span></div>
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Tenure</span><span>7+ Years Experience</span></div>
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Credentials</span><span>LLB (Hons)</span></div>
+              <div class="flex justify-between items-baseline"><span class="font-medium text-[#0F2D52] text-xs uppercase tracking-wider">Languages</span><span>English, Swahili</span></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="px-8 pb-8 pt-2">
+          <a href="#"
+             class="inline-flex items-center text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+            View Credentials <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM WHY CHOOSE US SECTION -->
+<section class="bg-white py-24 relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <!-- Subtle design vector anchor for luxury texture -->
+  <div class="absolute right-[-10%] top-[-10%] w-[500px] h-[500px] border border-[#0F2D52]/5 rounded-full pointer-events-none hidden xl:block"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Section Heading Block -->
+    <div class="max-w-3xl mb-16 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Our Core Advantages</span>
+      </div>
+      <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        Why Partners Choose Our Counsel
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal pt-1">
+        Distinct executive advantages engineered to navigate sensitive regulatory climates and secure clear resolution matrices for high-stakes portfolios.
+      </p>
+    </div>
+
+    <!-- 3-Column Luxury Card Grid Matrix -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Item 1: Discretion -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Absolute Discretion</h3>
+          <p class="mt-3 text-sm text-slate-500 font-light leading-relaxed">All strategic configurations, transaction workflows, and corporate records are strictly protected under absolute legal privilege.</p>
+        </div>
+      </div>
+
+      <!-- Item 2: Financial Transparency -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Transparent Fees</h3>
+          <p class="mt-3 text-sm text-slate-500 font-light leading-relaxed">Fee allocations are structurally transparent. Clear, value-focused billing models eliminate unexpected corporate retainer anomalies.</p>
+        </div>
+      </div>
+
+      <!-- Item 3: Elite Direct Access -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Direct Access</h3>
+          <p class="mt-3 text-sm text-slate-500 font-light leading-relaxed">Unrestricted access pipelines to leading advocates guarantee your board receives responsive, real-time analytical updates.</p>
+        </div>
+      </div>
+
+      <!-- Item 4: Commanding Authority -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Commanding Authority</h3>
+          <p class="mt-3 text-sm text-slate-500 font-light leading-relaxed">Our legal team possesses deep institutional tenure within specialized trial chambers and commercial regulatory panels.</p>
+        </div>
+      </div>
+
+      <!-- Item 5: Bespoke Strategy -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Bespoke Strategies</h3>
+          <p class="mt-3 text-sm text-slate-500 font-light leading-relaxed">No static templates. Every legal blueprint is custom-mapped to defend assets or optimize transaction closing success.</p>
+        </div>
+      </div>
+
+      <!-- Item 6: Proven History -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="text-[#C8A34D] mb-6 p-3 bg-[#C8A34D]/5 rounded-[10px] w-fit transition-colors duration-300 group-hover:bg-[#C8A34D] group-hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Proven Track Record</h3>
+          <p class="mt-3 text-sm text-slate-500 font-light leading-relaxed">A verifiable and commanding history of high-value dispute resolutions, asset protection, and landmark trial verdicts.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM CLIENT TESTIMONIALS & TRUST SUITE -->
+<section class="bg-white py-24 relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <!-- Subtle layout architecture line -->
+  <div class="max-w-7xl mx-auto px-6 mb-12">
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-[#0F2D52]/10 to-transparent"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Section Heading Block -->
+    <div class="max-w-3xl mb-16 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Client Counsel Verification</span>
+      </div>
+      <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        Institutional Testimonials
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal pt-1">
+        Verifiable professional feedback from prominent managing directors, corporate general counsel, and enterprise executives we have defended across East Africa.
+      </p>
+    </div>
+
+    <!-- 3-Column Luxury Testimonial Cards Grid Matrix -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Testimonial 1 -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-0.5 group">
+        <div class="space-y-4">
+          <!-- Decorative Elegant Gold Quotation Mark Element -->
+          <span class="text-4xl text-[#C8A34D]/30 font-['Playfair_Display',serif] block leading-none select-none">“</span>
+          <p class="text-sm sm:text-base text-slate-500 font-light leading-relaxed italic">
+            The legal team handled our commercial restructuring brief with deep corporate intelligence. Communications were entirely seamless, and our core enterprise assets were fully secured from start to finish.
+          </p>
+        </div>
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-[#0F2D52]/5">
+          <img src="thumbnails/johnmichael.jpg"
+               class="w-12 h-12 rounded-[12px] object-cover border border-[#0F2D52]/10"
+               alt="Michael John">
+          <div>
+            <h3 class="font-normal text-base text-[#0F2D52] font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Michael John</h3>
+            <p class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D] mt-0.5">Managing Director</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-0.5 group">
+        <div class="space-y-4">
+          <span class="text-4xl text-[#C8A34D]/30 font-['Playfair_Display',serif] block leading-none select-none">“</span>
+          <p class="text-sm sm:text-base text-slate-500 font-light leading-relaxed italic">
+            Highly responsive, analytical counsel during a complex international cross-border estate division. Their litigators protected my private transactional interests with absolute discretion and absolute precision.
+          </p>
+        </div>
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-[#0F2D52]/5">
+          <img src="thumbnails/sarah.png"
+               class="w-12 h-12 rounded-[12px] object-cover border border-[#0F2D52]/10"
+               alt="Sarah Ahmed">
+          <div>
+            <h3 class="font-normal text-base text-[#0F2D52] font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Sarah Ahmed</h3>
+            <p class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D] mt-0.5">Corporate Counsel</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-white border border-[#0F2D52]/5 p-8 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-0.5 group">
+        <div class="space-y-4">
+          <span class="text-4xl text-[#C8A34D]/30 font-['Playfair_Display',serif] block leading-none select-none">“</span>
+          <p class="text-sm sm:text-base text-slate-500 font-light leading-relaxed italic">
+            Formidable representation before the High Court. Their strategic trial blueprints and razor-sharp courtroom execution saved our regional logistics infrastructure enterprise from immense regulatory penalization risks.
+          </p>
+        </div>
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-[#0F2D52]/5">
+          <img src="thumbnails/daniel.png"
+               class="w-12 h-12 rounded-[12px] object-cover border border-[#0F2D52]/10"
+               alt="Daniel Mwita">
+          <div>
+            <h3 class="font-normal text-base text-[#0F2D52] font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Daniel Mwita</h3>
+            <p class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D] mt-0.5">Operations Lead</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Improvised Featured Case Brief Segment (12px rounded, soft background card wrapper) -->
+    <div class="mt-16 bg-[#0F2D52]/[0.02] border border-[#0F2D52]/5 p-8 md:p-12 rounded-[12px] relative overflow-hidden shadow-[0_10px_40px_rgba(15,45,82,0.01)]">
+      <div class="absolute inset-0 bg-[radial-gradient(#C8A34D_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.03]"></div>
+      
+      <div class="grid md:grid-cols-12 gap-8 items-center relative z-10">
+        
+        <!-- Case Information Block -->
+        <div class="md:col-span-7 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] uppercase tracking-widest font-bold bg-[#C8A34D]/10 text-[#C8A34D] px-2.5 py-1 rounded-[4px]">
+              Arbitration Victory
+            </span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-normal tracking-tight text-[#0F2D52] font-['Playfair_Display',serif]">
+            Securing Landmark Victory in Commercial Arbitration
+          </h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed max-w-xl">
+            Successfully defended a regional infrastructure conglomerate against multi-billion shilling breach-of-contract allegations, completely mitigating liability exposure with zero corporate downtime.
+          </p>
+          
+          <div class="flex gap-8 border-t border-[#0F2D52]/5 pt-6">
+            <div>
+              <p class="text-2xl font-light text-[#C8A34D] font-['Playfair_Display',serif]">100%</p>
+              <p class="text-[10px] uppercase tracking-widest font-bold text-slate-400 mt-1">Liability Mitigated</p>
+            </div>
+            <div>
+              <p class="text-2xl font-light text-[#C8A34D] font-['Playfair_Display',serif]">14 Days</p>
+              <p class="text-[10px] uppercase tracking-widest font-bold text-slate-400 mt-1">Resolution Window</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate Review Quote Block & CTA Action -->
+        <div class="md:col-span-5 flex flex-col gap-6">
+          <div class="bg-white p-6 border border-[#0F2D52]/5 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.02)] space-y-2">
+            <p class="text-xs text-slate-500 italic leading-relaxed font-light">"Their tactical legal precision under immense operational time constraints protected our annual corporate roadmap loop entirely."</p>
+            <p class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D] pt-1">— Infrastructure Director Review</p>
+          </div>
+          
+          <a href="#" class="bg-[#C8A34D] text-white text-center text-xs uppercase tracking-widest font-bold py-4 px-6 rounded-[12px] shadow-[0_4px_14px_rgba(200,163,77,0.2)] hover:bg-[#0F2D52] hover:shadow-[0_4px_14px_rgba(15,45,82,0.15)] transition-all duration-300 transform hover:-translate-y-0.5">
+            Examine Case Briefing
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PREMIUM LEGAL PROCESS WORKFLOW -->
+<section class="bg-white py-24 relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <!-- Subtle decorative light pattern for depth -->
+  <div class="absolute inset-0 bg-[radial-gradient(#0F2D52_0.5px,transparent_0.5px)] [background-size:40px_40px] opacity-[0.015]"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Section Heading Block -->
+    <div class="max-w-3xl mb-24 mx-auto text-center space-y-4">
+      <div class="flex items-center justify-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Our Methodology</span>
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+      </div>
+      <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        The Legal Process
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto font-normal pt-1">
+        A rigorous, transparent, and highly structured operational approach to guiding your legal matter from initial brief to definitive resolution.
+      </p>
+    </div>
+
+    <!-- Timeline Wrapper Frame -->
+    <div class="relative max-w-5xl mx-auto">
+      
+      <!-- Center Core Axis Line: Ultra-thin, premium corporate presentation -->
+      <div class="absolute left-4 sm:left-1/2 top-4 bottom-4 w-px bg-gradient-to-b from-[#0F2D52]/10 via-[#0F2D52]/5 to-transparent -translate-x-1/2 hidden sm:block"></div>
+
+      <!-- Step 1: Left Align on Desktop -->
+      <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16 sm:mb-20 items-center group">
+        <div class="pl-12 sm:pl-0 sm:pr-16 sm:text-right order-2 sm:order-1 transition-all duration-300">
+          <span class="text-[10px] uppercase tracking-[0.15em] font-bold text-[#C8A34D] block mb-1.5">Phase I</span>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Schedule Consultation</h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed mt-2 max-w-md sm:ml-auto">
+            Secure an initial strategic session to detail your primary structural objectives and map out preliminary operational parameters.
+          </p>
+        </div>
+        <!-- Center Geometric Badge Node: Refined 12px rounded corner layout -->
+        <div class="absolute left-0 sm:left-1/2 top-1 sm:top-auto w-9 h-9 bg-[#0F2D52] border-2 border-white text-white flex items-center justify-center text-xs font-bold rounded-[12px] shadow-[0_4px_12px_rgba(15,45,82,0.15)] -translate-x-0 sm:-translate-x-1/2 z-10 group-hover:bg-[#C8A34D] transition-colors duration-300">
+          01
+        </div>
+        <div class="hidden sm:block order-2"></div>
+      </div>
+
+      <!-- Step 2: Right Align on Desktop -->
+      <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16 sm:mb-20 items-center group">
+        <div class="hidden sm:block"></div>
+        <!-- Center Geometric Badge Node: Alternating white glass aesthetic -->
+        <div class="absolute left-0 sm:left-1/2 top-1 sm:top-auto w-9 h-9 bg-white border-2 border-[#C8A34D] text-[#0F2D52] flex items-center justify-center text-xs font-bold rounded-[12px] shadow-[0_4px_12px_rgba(200,163,77,0.1)] -translate-x-0 sm:-translate-x-1/2 z-10 group-hover:bg-[#0F2D52] group-hover:text-white group-hover:border-[#0F2D52] transition-all duration-300">
+          02
+        </div>
+        <div class="pl-12 sm:pl-16 order-2">
+          <span class="text-[10px] uppercase tracking-[0.15em] font-bold text-[#C8A34D] block mb-1.5">Phase II</span>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Case Evaluation</h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed mt-2 max-w-md">
+            Our advisory team performs an extensive review, auditing evidentiary portfolios and historical documents to assess viable legal tracks.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3: Left Align on Desktop -->
+      <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16 sm:mb-20 items-center group">
+        <div class="pl-12 sm:pl-0 sm:pr-16 sm:text-right order-2 sm:order-1 transition-all duration-300">
+          <span class="text-[10px] uppercase tracking-[0.15em] font-bold text-[#C8A34D] block mb-1.5">Phase III</span>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Strategic Framework</h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed mt-2 max-w-md sm:ml-auto">
+            We architect a bespoke transactional or trial plan blueprint constructed specifically around your asset defense and corporate targets.
+          </p>
+        </div>
+        <!-- Center Geometric Badge Node -->
+        <div class="absolute left-0 sm:left-1/2 top-1 sm:top-auto w-9 h-9 bg-[#0F2D52] border-2 border-white text-white flex items-center justify-center text-xs font-bold rounded-[12px] shadow-[0_4px_12px_rgba(15,45,82,0.15)] -translate-x-0 sm:-translate-x-1/2 z-10 group-hover:bg-[#C8A34D] transition-colors duration-300">
+          03
+        </div>
+        <div class="hidden sm:block order-2"></div>
+      </div>
+
+      <!-- Step 4: Right Align on Desktop -->
+      <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-8 items-center group">
+        <div class="hidden sm:block"></div>
+        <!-- Center Geometric Badge Node -->
+        <div class="absolute left-0 sm:left-1/2 top-1 sm:top-auto w-9 h-9 bg-white border-2 border-[#C8A34D] text-[#0F2D52] flex items-center justify-center text-xs font-bold rounded-[12px] shadow-[0_4px_12px_rgba(200,163,77,0.1)] -translate-x-0 sm:-translate-x-1/2 z-10 group-hover:bg-[#0F2D52] group-hover:text-white group-hover:border-[#0F2D52] transition-all duration-300">
+          04
+        </div>
+        <div class="pl-12 sm:pl-16 order-2">
+          <span class="text-[10px] uppercase tracking-[0.15em] font-bold text-[#C8A34D] block mb-1.5">Phase IV</span>
+          <h3 class="font-normal text-xl text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">Execution & Resolution</h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed mt-2 max-w-md">
+            Our advocates deliver dedicated representation across high court jurisdictions or commercial panels until a definitive settlement is secured.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- PREMIUM ACCORDION FAQ SECTION -->
+<section class="bg-white py-24 relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <div class="max-w-4xl mx-auto px-6 relative z-10">
+
+    <!-- Section Heading Block -->
+    <div class="max-w-3xl mb-16 mx-auto text-center space-y-4">
+      <div class="flex items-center justify-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Clear Insights</span>
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+      </div>
+      <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg max-w-xl mx-auto font-normal pt-1">
+        Quick, professional clarity on operational parameters and engagement structures before initiating your legal brief.
+      </p>
+    </div>
+
+    <!-- FAQ Items Engine via CSS Pure Grid Transitions -->
+    <div class="space-y-4 max-w-3xl mx-auto">
+
+      <!-- Item 1: Retainers & Fees -->
+      <div class="group border border-[#0F2D52]/5 bg-white rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_12px_40px_rgba(15,45,82,0.03)] transition-all duration-300">
+        <!-- Hidden input toggle proxy node -->
+        <input type="checkbox" id="faq-1" class="peer hidden" />
+        <label for="faq-1" class="w-full px-6 py-5 flex justify-between items-center cursor-pointer select-none">
+          <span class="font-normal text-base md:text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            What are the structural retainers or consultation fees?
+          </span>
+          <!-- Dynamic gold vector node indicator line element -->
+          <div class="text-[#C8A34D] transition-transform duration-500 peer-checked:rotate-45 shrink-0 ml-4 p-2 bg-[#C8A34D]/5 rounded-[10px]">
+            <svg class="w-4 h-4 transform transition-transform duration-500 [.peer:checked+label_&]:rotate-45" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </div>
+        </label>
+        <!-- The Smooth Transition Window Box Container -->
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out [.peer:checked~&]:grid-rows-[1fr] border-t border-transparent [.peer:checked~&]:border-[#0F2D52]/5">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 pt-4 text-sm text-slate-500 font-light leading-relaxed">
+              Consultation fees scale predictably based upon structural file parameters. While initial corporate alignment briefings or specific case screenings may be provided on a flat-tier model, sophisticated transactional assessments require specialized retainers.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Trajectory Timeline -->
+      <div class="group border border-[#0F2D52]/5 bg-white rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_12px_40px_rgba(15,45,82,0.03)] transition-all duration-300">
+        <input type="checkbox" id="faq-2" class="peer hidden" />
+        <label for="faq-2" class="w-full px-6 py-5 flex justify-between items-center cursor-pointer select-none">
+          <span class="font-normal text-base md:text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            What is the projected temporal trajectory of a legal brief?
+          </span>
+          <div class="text-[#C8A34D] transition-transform duration-500 shrink-0 ml-4 p-2 bg-[#C8A34D]/5 rounded-[10px]">
+            <svg class="w-4 h-4 transform transition-transform duration-500 [.peer:checked+label_&]:rotate-45" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </div>
+        </label>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out [.peer:checked~&]:grid-rows-[1fr] border-t border-transparent [.peer:checked~&]:border-[#0F2D52]/5">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 pt-4 text-sm text-slate-500 font-light leading-relaxed">
+              The resolution lifecycle rests upon technical complexity, corporate advisory depth, and court calendar backlogs across local regulatory boards. Straightforward contract drafting stabilizes within days, whereas high-stakes litigation can follow long court matrices.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Virtual Collaboration -->
+      <div class="group border border-[#0F2D52]/5 bg-white rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_12px_40px_rgba(15,45,82,0.03)] transition-all duration-300">
+        <input type="checkbox" id="faq-3" class="peer hidden" />
+        <label for="faq-3" class="w-full px-6 py-5 flex justify-between items-center cursor-pointer select-none">
+          <span class="font-normal text-base md:text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            Is a physical presence required at your regional office hub?
+          </span>
+          <div class="text-[#C8A34D] transition-transform duration-500 shrink-0 ml-4 p-2 bg-[#C8A34D]/5 rounded-[10px]">
+            <svg class="w-4 h-4 transform transition-transform duration-500 [.peer:checked+label_&]:rotate-45" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </div>
+        </label>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out [.peer:checked~&]:grid-rows-[1fr] border-t border-transparent [.peer:checked~&]:border-[#0F2D52]/5">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 pt-4 text-sm text-slate-500 font-light leading-relaxed">
+              Physical attendance is not mandated for early workflow stages. We conduct encrypted video conferences, secure telecommunication briefs, and cloud document audits to preserve operational pace for domestic and international clients.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Compliance Scope -->
+      <div class="group border border-[#0F2D52]/5 bg-white rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_12px_40px_rgba(15,45,82,0.03)] transition-all duration-300">
+        <input type="checkbox" id="faq-4" class="peer hidden" />
+        <label for="faq-4" class="w-full px-6 py-5 flex justify-between items-center cursor-pointer select-none">
+          <span class="font-normal text-base md:text-lg text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300">
+            Does the firm handle multi-jurisdictional corporate compliance?
+          </span>
+          <div class="text-[#C8A34D] transition-transform duration-500 shrink-0 ml-4 p-2 bg-[#C8A34D]/5 rounded-[10px]">
+            <svg class="w-4 h-4 transform transition-transform duration-500 [.peer:checked+label_&]:rotate-45" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </div>
+        </label>
+        <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out [.peer:checked~&]:grid-rows-[1fr] border-t border-transparent [.peer:checked~&]:border-[#0F2D52]/5">
+          <div class="overflow-hidden">
+            <div class="px-6 pb-6 pt-4 text-sm text-slate-500 font-light leading-relaxed">
+              Yes. Our corporate practice group structures regulatory advisory paths for enterprises, spanning statutory cross-border due diligence, labor protection protocols, tax frameworks, and institutional disputes.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM BLOG / LEGAL INSIGHTS SECTION -->
+<section class="bg-white py-24 relative overflow-hidden font-['Inter',sans-serif]">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Heading Block -->
+    <div class="max-w-3xl mb-16 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Corporate Intelligence</span>
+      </div>
+      <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        Legal Insights & Briefings
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal pt-1">
+        Practical legal intelligence curated by our senior advocates to safeguard corporate operations, cross-border investments, and individual rights in Tanzania.
+      </p>
+    </div>
+
+    <!-- Asymmetric Editorial Grid (7 Column Feature Spotlight / 5 Column Compact Index) -->
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+      <!-- LEFT SIDE: Main Feature Spotlight Post (7 Columns wide) -->
+      <div class="lg:col-span-7 bg-white border border-[#0F2D52]/5 rounded-[12px] overflow-hidden shadow-[0_10px_30px_rgba(15,45,82,0.01)] hover:shadow-[0_20px_40px_rgba(15,45,82,0.05)] hover:border-[#C8A34D]/20 transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-0.5">
+        <div>
+          <div class="w-full aspect-[16/9] overflow-hidden bg-slate-50 relative border-b border-[#0F2D52]/5">
+            <img src="thumbnails/registrationcomp.jpg"
+                 class="w-full h-full object-cover transform scale-100 group-hover:scale-102 transition-transform duration-700 ease-out"
+                 alt="Corporate executive team mapping out regulatory compliance guidelines">
+          </div>
+          <div class="p-8 md:p-10 space-y-4">
+            <div class="flex items-center gap-3 text-[11px] font-bold uppercase tracking-wider text-[#C8A34D]">
+              <span>Corporate Law</span>
+              <span class="w-1 h-1 bg-[#0F2D52]/20 rounded-full"></span>
+              <span class="text-slate-400 font-normal">July 2026</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-normal text-[#0F2F52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300 leading-tight">
+              How to Register a Company in Tanzania: An Executive Guide
+            </h3>
+            <p class="text-slate-500 font-light text-sm sm:text-base leading-relaxed">
+              A meticulous overview detailing complex structural legal prerequisites, mandatory BRELA architectural submissions, statutory tax registration milestones, and local regulatory licensing paths.
+            </p>
+          </div>
+        </div>
+        <div class="px-8 md:px-10 pb-8 md:pb-10 pt-2">
+          <a href="#" class="inline-flex items-center text-xs uppercase tracking-widest font-bold text-[#0F2D52] group-hover:text-[#C8A34D] transition-colors duration-300">
+            Read Full Briefing <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: Stacked Briefing Index List (5 Columns wide) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Index Post 2 -->
+        <div class="flex items-center gap-5 p-4 bg-white border border-[#0F2D52]/5 rounded-[12px] shadow-[0_4px_20px_rgba(15,45,82,0.005)] hover:shadow-[0_12px_30px_rgba(15,45,82,0.03)] hover:border-[#C8A34D]/20 transition-all duration-300 group cursor-pointer">
+          <div class="w-20 h-24 sm:w-24 sm:h-24 shrink-0 overflow-hidden bg-slate-50 rounded-[10px] border border-[#0F2D52]/5">
+            <img src="thumbnails/titledeed.jpg" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500" alt="Property deed signing validation">
+          </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D]">Property Law</span>
+            <h4 class="font-normal text-base text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300 line-clamp-2 leading-snug">
+              Understanding Land Ownership & Statutory Property Laws
+            </h4>
+            <span class="text-[11px] uppercase tracking-widest font-bold text-[#0F2D52] inline-block pt-0.5">Read Brief →</span>
+          </div>
+        </div>
+
+        <!-- Index Post 3 -->
+        <div class="flex items-center gap-5 p-4 bg-white border border-[#0F2D52]/5 rounded-[12px] shadow-[0_4px_20px_rgba(15,45,82,0.005)] hover:shadow-[0_12px_30px_rgba(15,45,82,0.03)] hover:border-[#C8A34D]/20 transition-all duration-300 group cursor-pointer">
+          <div class="w-20 h-24 sm:w-24 sm:h-24 shrink-0 overflow-hidden bg-slate-50 rounded-[10px] border border-[#0F2D52]/5">
+            <img src="thumbnails/reference.jpg" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500" alt="Judicial reference library files">
+          </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D]">Family Litigation</span>
+            <h4 class="font-normal text-base text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300 line-clamp-2 leading-snug">
+              Divorce Proceedings & Asset Restructuring Explained
+            </h4>
+            <span class="text-[11px] uppercase tracking-widest font-bold text-[#0F2D52] inline-block pt-0.5">Read Brief →</span>
+          </div>
+        </div>
+
+        <!-- Index Post 4 -->
+        <div class="flex items-center gap-5 p-4 bg-white border border-[#0F2D52]/5 rounded-[12px] shadow-[0_4px_20px_rgba(15,45,82,0.005)] hover:shadow-[0_12px_30px_rgba(15,45,82,0.03)] hover:border-[#C8A34D]/20 transition-all duration-300 group cursor-pointer">
+          <div class="w-20 h-24 sm:w-24 sm:h-24 shrink-0 overflow-hidden bg-slate-50 rounded-[10px] border border-[#0F2D52]/5">
+            <img src="thumbnails/audit.webp" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500" alt="Advocate auditing corporate asset paperwork">
+          </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D]">Labor Law</span>
+            <h4 class="font-normal text-base text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300 line-clamp-2 leading-snug">
+              Employment Rights: Statutory Protections Every Enterprise Must Know
+            </h4>
+            <span class="text-[11px] uppercase tracking-widest font-bold text-[#0F2D52] inline-block pt-0.5">Read Brief →</span>
+          </div>
+        </div>
+
+        <!-- Index Post 5 -->
+        <div class="flex items-center gap-5 p-4 bg-white border border-[#0F2D52]/5 rounded-[12px] shadow-[0_4px_20px_rgba(15,45,82,0.005)] hover:shadow-[0_12px_30px_rgba(15,45,82,0.03)] hover:border-[#C8A34D]/20 transition-all duration-300 group cursor-pointer">
+          <div class="w-20 h-24 sm:w-24 sm:h-24 shrink-0 overflow-hidden bg-slate-50 rounded-[10px] border border-[#0F2D52]/5">
+            <img src="thumbnails/matrix.png" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500" alt="Reviewing commercial risk matrix loops on a laptop device">
+          </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D]">Commercial Risk</span>
+            <h4 class="font-normal text-base text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300 line-clamp-2 leading-snug">
+              Business Contracts: Mitigating Latent Liability Pitfalls
+            </h4>
+            <span class="text-[11px] uppercase tracking-widest font-bold text-[#0F2D52] inline-block pt-0.5">Read Brief →</span>
+          </div>
+        </div>
+
+        <!-- Index Post 6 -->
+        <div class="flex items-center gap-5 p-4 bg-white border border-[#0F2D52]/5 rounded-[12px] shadow-[0_4px_20px_rgba(15,45,82,0.005)] hover:shadow-[0_12px_30px_rgba(15,45,82,0.03)] hover:border-[#C8A34D]/20 transition-all duration-300 group cursor-pointer">
+          <div class="w-20 h-24 sm:w-24 sm:h-24 shrink-0 overflow-hidden bg-slate-50 rounded-[10px] border border-[#0F2D52]/5">
+            <img src="thumbnails/imigration.jpeg" class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-500" alt="Institutional circular architecture view">
+          </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D]">Immigration Frameworks</span>
+            <h4 class="font-normal text-base text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] group-hover:text-[#C8A34D] transition-colors duration-300 line-clamp-2 leading-snug">
+              Immigration Updates & Cross-Border Residency Changes
+            </h4>
+            <span class="text-[11px] uppercase tracking-widest font-bold text-[#0F2D52] inline-block pt-0.5">Read Brief →</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- PREMIUM CALL TO ACTION BANNER -->
+<section class="bg-[#0F2D52] py-20 lg:py-28 relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <!-- Sophisticated background visual geometry motif lines -->
+  <div class="absolute inset-0 bg-[radial-gradient(#C8A34D_0.5px,transparent_0.5px)] [background-size:32px_32px] opacity-[0.04]"></div>
+  <!-- Premium 12px rounded background accent frame shape -->
+  <div class="absolute -bottom-24 -right-24 w-96 h-96 border border-[#C8A34D]/10 rounded-[12px] pointer-events-none hidden lg:block"></div>
+
+  <div class="max-w-5xl mx-auto px-6 text-center relative z-10 space-y-6">
+
+    <!-- Subtitle Tag Alignment -->
+    <div class="flex items-center justify-center gap-3">
+      <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+      <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Initiate Representation</span>
+      <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+    </div>
+
+    <!-- Heading Element: Prestigious Serif Scale utilizing Playfair Display -->
+    <h2 class="text-3xl md:text-5xl font-normal text-white tracking-tight leading-[1.2] font-['Playfair_Display',serif]">
+      Require <span class="italic font-light text-[#C8A34D]">Authoritative</span> Legal Counsel?
+    </h2>
+
+    <!-- Supporting Text Column -->
+    <p class="text-white/80 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light pt-1">
+      Secure a strategic asset evaluation briefing with our senior partners today. Protect your enterprise capital and clarify your global transactional options with absolute professional discretion.
+    </p>
+
+    <!-- Operational Call Action Buttons Matrix: Clean 12px rounded geometry with physical shadow lift -->
+    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto pt-4">
+
+      <a href="#"
+         class="bg-[#C8A34D] text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-[12px] shadow-[0_4px_20px_rgba(200,163,77,0.3)] hover:bg-white hover:text-[#0F2D52] hover:shadow-none transition-all duration-300 transform hover:-translate-y-0.5 text-center w-full sm:w-auto whitespace-nowrap">
+        Book Consultation
+      </a>
+
+      <a href="tel:+255"
+         class="border border-white/20 text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-[12px] hover:bg-white hover:text-[#0F2D52] hover:border-white transition-all duration-300 transform hover:-translate-y-0.5 text-center w-full sm:w-auto whitespace-nowrap">
+        Call Office Directly
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- PREMIUM CONTACT & CASE INTAKE SUITE -->
+<section class="bg-white py-24 relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <!-- Subtle decorative architectural background line -->
+  <div class="max-w-7xl mx-auto px-6 mb-16">
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-[#0F2D52]/10 to-transparent"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Section Heading Block -->
+    <div class="max-w-3xl mb-16 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[1px] bg-[#C8A34D]"></span>
+        <span class="text-xs uppercase tracking-[0.2em] font-bold text-[#C8A34D]">Secure Engagement</span>
+      </div>
+      <h2 class="text-4xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        Contact Our Chambers
+      </h2>
+      <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal pt-1">
+        Initiate confidential contact or arrange a formal portfolio file audit with our advisory team at our primary Dar es Salaam headquarters.
+      </p>
+    </div>
+
+    <!-- Asymmetric 12-Column Grid Layout Matrix -->
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+      <!-- LEFT SIDE: EXECUTIVE DIRECTORY & MAP (5 Columns wide) -->
+      <div class="lg:col-span-5 space-y-10">
+        
+        <!-- Contact Directory Links aligned to an 8px system -->
+        <div class="space-y-6 border-b border-[#0F2D52]/10 pb-8 font-light text-slate-500">
+          <div class="space-y-1">
+            <h3 class="text-xs uppercase tracking-widest font-bold text-[#C8A34D]">Direct Communications</h3>
+            <p class="text-xl font-normal text-[#0F2D52] font-['Playfair_Display',serif] pt-1">+255 788 296 274</p>
+          </div>
+
+          <div class="space-y-1">
+            <h3 class="text-xs uppercase tracking-widest font-bold text-[#C8A34D]">Secure Electronic Mail</h3>
+            <p class="text-base font-medium text-[#0F2D52] hover:text-[#C8A34D] transition-colors duration-200 cursor-pointer pt-1">info@lawfirm.co.tz</p>
+          </div>
+
+          <div class="space-y-1">
+            <h3 class="text-xs uppercase tracking-widest font-bold text-[#C8A34D]">Corporate Headquarters</h3>
+            <p class="text-sm leading-relaxed mt-1">
+              4th Floor, Haile Selassie Road,<br>
+              Oysterbay, Kinondoni District,<br>
+              Dar es Salaam, Tanzania
+            </p>
+          </div>
+
+          <div class="space-y-1">
+            <h3 class="text-xs uppercase tracking-widest font-bold text-[#C8A34D]">Chamber Operations Hours</h3>
+            <div class="text-sm leading-relaxed space-y-1.5 pt-2 max-w-xs text-slate-500">
+              <p class="flex justify-between"><span>Monday – Friday:</span> <span class="text-[#0F2D52] font-semibold">08:00 – 18:00</span></p>
+              <p class="flex justify-between"><span>Saturday Session:</span> <span class="text-[#0F2D52] font-semibold">09:00 – 14:00</span></p>
+              <p class="flex justify-between text-slate-400"><span>Sunday & Holidays:</span> <span class="font-normal italic">Chambers Closed</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMBEDDED DYNAMIC MAP CONTAINER: 12px rounded geometry with interactive canvas filter styling -->
+        <div class="border border-[#0F2D52]/5 rounded-[12px] overflow-hidden shadow-[0_10px_30px_rgba(15,45,82,0.02)] h-64 relative group hover:border-[#C8A34D]/30 transition-all duration-300">
+          <iframe
+            src="https://google.com"
+            class="w-full h-full grayscale contrast-115 group-hover:grayscale-0 transition-all duration-500 ease-out"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Law Firm Oysterbay Headquarter Location Map">
+          </iframe>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE: STRATEGIC BRIEF INTAKE FORM (7 Columns wide) -->
+      <div class="lg:col-span-7 bg-[#0F2D52]/[0.015] p-8 md:p-10 border border-[#0F2D52]/5 rounded-[12px] shadow-[0_10px_30px_rgba(15,45,82,0.005)]">
+        
+        <div class="mb-8 space-y-1">
+          <h3 class="text-xl font-normal text-[#0F2D52] font-['Playfair_Display',serif] tracking-tight">Case Evaluation Protocol</h3>
+          <p class="text-xs text-slate-500 font-light">Please input verified institutional parameters. All submitted text arrays are privileged information.</p>
+        </div>
+
+        <form class="space-y-6">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-[11px] uppercase tracking-widest font-bold text-[#0F2D52]/80 block">Full Identity Name</label>
+              <input type="text" required class="w-full bg-white px-4 py-3.5 border border-[#0F2D52]/5 rounded-[12px] text-sm text-[#0F2D52] shadow-[0_4px_12px_rgba(15,45,82,0.01)] focus:outline-none focus:border-[#C8A34D] focus:ring-1 focus:ring-[#C8A34D] transition-all">
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-[11px] uppercase tracking-widest font-bold text-[#0F2D52]/80 block">Corporate Email Address</label>
+              <input type="email" required class="w-full bg-white px-4 py-3.5 border border-[#0F2D52]/5 rounded-[12px] text-sm text-[#0F2D52] shadow-[0_4px_12px_rgba(15,45,82,0.01)] focus:outline-none focus:border-[#C8A34D] focus:ring-1 focus:ring-[#C8A34D] transition-all">
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-[11px] uppercase tracking-widest font-bold text-[#0F2D52]/80 block">Direct Contact Line (Phone)</label>
+            <input type="tel" required placeholder="+255" class="w-full bg-white px-4 py-3.5 border border-[#0F2D52]/5 rounded-[12px] text-sm text-[#0F2D52] shadow-[0_4px_12px_rgba(15,45,82,0.01)] focus:outline-none focus:border-[#C8A34D] focus:ring-1 focus:ring-[#C8A34D] transition-all">
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-[11px] uppercase tracking-widest font-bold text-[#0F2D52]/80 block">Brief Statement of Case Parameters</label>
+            <textarea rows="5" required placeholder="Outline the core statutory or commercial targets of your brief..." class="w-full bg-white px-4 py-3.5 border border-[#0F2D52]/5 rounded-[12px] text-sm text-[#0F2D52] placeholder-slate-300 shadow-[0_4px_12px_rgba(15,45,82,0.01)] focus:outline-none focus:border-[#C8A34D] focus:ring-1 focus:ring-[#C8A34D] transition-all"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit"
+                    class="w-full bg-[#0F2D52] text-white text-xs uppercase tracking-widest font-bold py-4 px-6 rounded-[12px] shadow-[0_4px_20px_rgba(15,45,82,0.15)] hover:bg-[#C8A34D] hover:shadow-[0_4px_20px_rgba(200,163,77,0.2)] transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none cursor-pointer">
+              Submit Privilege Case File Briefing
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM GLOBAL SITE FOOTER -->
+<footer class="bg-[#0F2D52] text-white pt-20 pb-10 border-t-2 border-[#C8A34D] relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <!-- Subtle background layout motif accent for expensive texture -->
+  <div class="absolute inset-0 bg-[radial-gradient(#C8A34D_0.5px,transparent_0.5px)] [background-size:32px_32px] opacity-[0.03]"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-12 md:gap-8 lg:gap-12">
+
+      <!-- Column 1: Logo + Core Corporate Profile (4 Columns wide on Desktop) -->
+      <div class="col-span-2 md:col-span-4 space-y-6">
+        <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-0.5 font-['Playfair_Display',serif]">
+          Law<span class="text-[#C8A34D] font-normal italic">Chambers</span><span class="text-[#C8A34D] font-black text-3xl leading-none">.</span>
+        </a>
+        <p class="text-sm text-white/60 leading-relaxed font-light max-w-sm">
+          Providing premier legal representation and elite multi-jurisdictional strategic counsel across East Africa with an unwavering commitment to integrity, precision, and client asset protection.
+        </p>
+        
+        <!-- Social Icon Vector Badges: Configured to our strict 12px rounded rule -->
+        <div class="flex gap-3 pt-2">
+          <!-- LinkedIn Vector Node -->
+          <a href="#" class="w-10 h-10 border border-white/10 bg-white/5 rounded-[12px] flex items-center justify-center text-white/60 hover:text-[#C8A34D] hover:border-[#C8A34D]/40 hover:bg-white/10 transition-all duration-300" aria-label="LinkedIn Profile">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <!-- X Vector Node -->
+          <a href="#" class="w-10 h-10 border border-white/10 bg-white/5 rounded-[12px] flex items-center justify-center text-white/60 hover:text-[#C8A34D] hover:border-[#C8A34D]/40 hover:bg-white/10 transition-all duration-300" aria-label="X Profile">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Practice Areas Links (3 Columns wide on Desktop) -->
+      <div class="col-span-1 md:col-span-3">
+        <h3 class="text-xs uppercase tracking-[0.15em] font-bold text-white/90 mb-6 border-l-2 border-[#C8A34D] pl-3">
+          Practice Areas
+        </h3>
+        <ul class="space-y-3 text-sm text-white/60 font-light">
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Corporate & M&A Law</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Family & Wealth Protection</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Executive Regulatory Defense</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Civil & Commercial Trials</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Infrastructure & Property Law</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">IP & Global Tax Advisory</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Navigation Quick Links (2 Columns wide on Desktop) -->
+      <div class="col-span-1 md:col-span-2">
+        <h3 class="text-xs uppercase tracking-[0.15em] font-bold text-white/90 mb-6 border-l-2 border-[#C8A34D] pl-3">
+          Quick Links
+        </h3>
+        <ul class="space-y-3 text-sm text-white/60 font-light">
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Chamber Overview</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Our Advocates</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Track Record</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Legal Intelligence</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Secure Intake Portal</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Compliance + Policies (3 Columns wide on Desktop) -->
+      <div class="col-span-2 md:col-span-3">
+        <h3 class="text-xs uppercase tracking-[0.15em] font-bold text-white/90 mb-6 border-l-2 border-[#C8A34D] pl-3">
+          Regulatory Info
+        </h3>
+        <ul class="space-y-3 text-sm text-white/60 font-light mb-6">
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Privacy & Data Protections</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Terms of Engagement</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Client Retainer Policy</a></li>
+        </ul>
+        <!-- Statutory Professional Notice Disclaimer Layout -->
+        <p class="text-[10px] text-white/40 leading-relaxed font-light border-t border-white/5 pt-4">
+          Disclaimer: Information presented across this institutional portal is compiled for educational brief indexing indices only and does not establish a formal or binding advocate-client relationship.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar Container Grid -->
+    <div class="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 font-light gap-4">
+      <p>© 2026 Law Firm Chambers. All corporate rights reserved.</p>
+      <p class="font-mono text-[10px] tracking-wider uppercase text-white/30">Oysterbay Headquarters, Dar es Salaam</p>
+    </div>
+
+  </div>
+</footer>
+
+
+
+  <script>
+    const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mobileMenu");
+const spans = btn.querySelectorAll("span");
+const mobileLinks = menu.querySelectorAll(".mobile-link");
+
+// Centralized function to open and close the menu cleanly
+function toggleMenu() {
+  // Matches your specific custom offset distance class
+  menu.classList.toggle("-translate-x-full");
+
+  // Toggle the Hamburger to 'X' states safely via indexes
+  spans[0].classList.toggle("rotate-45");
+  spans[0].classList.toggle("translate-x-[3px]");
+  spans[0].classList.toggle("-translate-y-[1px]");
+  
+  spans[1].classList.toggle("opacity-0");
+  
+  spans[2].classList.toggle("-rotate-45");
+  spans[2].classList.toggle("translate-x-[3px]");
+  spans[2].classList.toggle("translate-y-[1px]");
+}
+
+// Click listener for the main menu toggle button
+btn.addEventListener("click", toggleMenu);
+
+// Loop through each link to automatically close the menu panel upon click
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    // Only trigger close if the menu panel is currently visible/open
+    if (!menu.classList.contains("-translate-x-full")) {
+      toggleMenu();
+    }
+  });
+});
+
+
+
+
+    const toggles = document.querySelectorAll(".faq-toggle");
+
+    toggles.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector("span:last-child");
+
+        content.classList.toggle("hidden");
+        icon.textContent = content.classList.contains("hidden") ? "+" : "−";
+      });
+    });
+  </script>
+
+</body>
+</html>
