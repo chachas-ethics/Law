@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Law Firm</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0F172A",   /* deep navy */
+            accent: "#C9A227"     /* gold */
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-slate-800 font-['Inter',sans-serif] selection:bg-[#C8A34D]/20 selection:text-[#0F2D52]">
+
+  <!-- STICKY HEADER -->
+<header class="w-full bg-[#f4efef] border-b border-[#0F2D52]/5 sticky top-0 z-50 backdrop-blur-md shadow-[0_4px_30px_rgba(15,45,82,0.02)] transition-all duration-300"> 
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between font-['Inter',sans-serif]"> 
+    
+    <!-- Logo --> 
+    <a href="#home" class="flex items-center gap-2 group focus:outline-none" aria-label="Law Firm Home"> 
+      <img src="thumbnails/ALC.jpeg" alt="Premium Corporate Law Firm Logo" class="h-9 sm:h-10 md:h-11 w-auto object-contain transform scale-100 group-hover:scale-[1.02] transition-transform duration-300 ease-out" loading="eager" /> 
+    </a> 
+
+    <!-- Desktop Navigation Menu Elements --> 
+    <nav class="hidden md:flex items-center gap-10 text-[14px] font-medium tracking-wide text-[#0F2D52]/90"> 
+      <a href="#home" class="text-[#C8A34D] transition-colors relative py-2">Home</a> 
+     <a href="#practice" class="hover:text-[#C8A34D] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1.5px] after:bg-[#C8A34D] hover:after:w-full hover:after:left-0 after:transition-all after:duration-300">Practice Areas</a> 
+      <a href="#about" class="hover:text-[#C8A34D] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1.5px] after:bg-[#C8A34D] hover:after:w-full hover:after:left-0 after:transition-all after:duration-300">About Us</a> 
+      <a href="#insights" class="hover:text-[#C8A34D] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1.5px] after:bg-[#C8A34D] hover:after:w-full hover:after:left-0 after:transition-all after:duration-300">Insights</a> 
+      <a href="#faqs" class="hover:text-[#C8A34D] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1.5px] after:bg-[#C8A34D] hover:after:w-full hover:after:left-0 after:transition-all after:duration-300">FAQs</a> 
+      <a href="#contact" class="hover:text-[#C8A34D] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1.5px] after:bg-[#C8A34D] hover:after:w-full hover:after:left-0 after:transition-all after:duration-300">Contact</a> 
+    </nav> 
+
+    <!-- Premium CTA Button --> 
+    <a href="https://wa.me/255788296274" target="_blank" class="hidden md:inline-flex items-center justify-center bg-[#C8A34D] text-white text-xs uppercase tracking-widest font-bold px-6 py-3.5 rounded-[12px] shadow-[0_4px_14px_rgba(200,163,77,0.25)] hover:bg-[#0F2D52] hover:shadow-[0_4px_14px_rgba(15,45,82,0.2)] transition-all duration-300 transform hover:-translate-y-0.5"> 
+      Free Consultation 
+    </a> 
+
+    <!-- Animated Hamburger Trigger Button --> 
+    <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 focus:outline-none p-2 relative z-50" aria-label="Toggle Menu"> 
+      <span class="w-6 h-0.5 bg-[#0F2D52] transition-all duration-300 origin-left"></span> 
+      <span class="w-6 h-0.5 bg-[#0F2D52] transition-all duration-300"></span> 
+      <span class="w-6 h-0.5 bg-[#0F2D52] transition-all duration-300 origin-left"></span> 
+    </button> 
+  </div> 
+
+  <!-- Mobile Full-Height Drawer --> 
+<div id="mobileMenu" class="md:hidden fixed top-0 left-0 w-80 h-screen bg-[#f4efef] px-6 pt-24 shadow-xl transition-transform duration-300 ease-in-out -translate-x-full flex flex-col gap-6"> 
+  
+  <!-- Top Image Container -->
+  <div class="w-full flex items-center justify-center">
+    <img src="thumbnails/ALC.jpeg" alt="Premium Corporate Law Firm Logo" class="h-12 w-auto object-contain" />
+  </div>
+
+  <!-- Mobile Navigation Menu Elements --> 
+  <nav class="flex flex-col gap-4 text-sm font-semibold tracking-wide text-[#0F2D52]"> 
+    <a href="#home" class="mobile-link text-[#C8A34D] py-2">Home</a> 
+   <a href="#practice" class="mobile-link hover:text-[#C8A34D] transition-colors py-2 border-b border-gray-50">Practice Areas</a> 
+     <a href="#about" class="mobile-link hover:text-[#C8A34D] transition-colors py-2 border-b border-gray-50">About Us</a> 
+      <a href="#insights" class="mobile-link hover:text-[#C8A34D] transition-colors py-2 border-b border-gray-50">Insights</a> 
+    <a href="#faqs" class="mobile-link hover:text-[#C8A34D] transition-colors py-2 border-b border-gray-50">FAQs</a> 
+    <a href="#contact" class="mobile-link hover:text-[#C8A34D] transition-colors py-2 pb-4">Contact</a> 
+    <a href="https://wa.me/255788296274" target="_blank" class="mobile-link mt-2 bg-[#C8A34D] text-white py-3.5 rounded-[12px] text-center text-xs uppercase tracking-widest font-bold shadow-md hover:bg-[#0F2D52] transition-colors"> Free Consultation </a> 
+  </nav> 
+</div>
+
+
+</header>
+
+  <!-- INSIGHTS ARTICLE HERO -->
+  <main class="py-12 sm:py-16 lg:py-20">
+    <article class="max-w-7xl mx-auto px-6">
+      
+    
+
+      <!-- Main Metadata Header -->
+      <header class="max-w-4xl space-y-6 mb-12">
+        <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-[#C8A34D]">
+          <span class="bg-[#C8A34D]/10 px-3 py-1 rounded-[6px]">Employment & Labor Relations</span>
+          <span class="text-slate-400 font-normal">Reading Time: 5 Mins</span>
+        </div>
+        
+        <h1 class="text-3xl sm:text-4xl lg:text-[48px] font-normal leading-[1.2] text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+          Employment Rights: <span class="italic font-light text-[#C8A34D]">Statutory Protections Every Enterprise Must Know</span>
+        </h1>
+        
+        <p class="text-slate-600 text-lg sm:text-xl leading-relaxed font-light border-l-2 border-[#C8A34D] pl-6 py-1">
+          A proactive compliance roadmap detailing contract variables, mandatory employee welfare criteria, lawful termination frameworks, and structural dispute mitigations under the Employment and Labour Relations Act of Tanzania.
+        </p>
+      </header>
+
+      <!-- Featured Image Display (12px rounded corner rule) -->
+      <div class="w-full aspect-[21/9] rounded-[12px] overflow-hidden shadow-[0_20px_50px_rgba(15,45,82,0.04)] mb-16 border border-[#0F2D52]/5">
+        <img src="thumbnails/audit.webp" alt="Senior corporate advocates auditing executive employment contracts and regulatory compliance files" class="w-full h-full object-cover">
+      </div>
+
+      <!-- ASYMMETRIC GRID: ARTICLE CONTENT (8 Columns) VS CONVERSION SIDEBAR (4 Columns) -->
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- ARTICLE BODY TEXT CONTAINER -->
+        <div class="lg:col-span-8 space-y-12 text-slate-600 font-light leading-relaxed text-base sm:text-lg">
+          
+          <section class="space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] border-b border-slate-100 pb-3">
+              1. The Architecture of Lawful Employment Contracts
+            </h2>
+            <p>
+              Operating an enterprise footprint within East African financial hubs requires a robust approach to labor compliance. Under the Employment and Labour Relations Act (ELRA), oral agreements expose corporate entities to severe structural liabilities. Every operational contract must materialize in a clear written form.
+            </p>
+            <p>
+              The statutory structure must define working hours, core remuneration indexes, explicit leave entitlements, and precise job parameters. For executive setups and specialized technical briefs, organizations must integrate clear, legally tested **Non-Disclosure Agreements (NDAs)** and post-employment restrictive covenants to cleanly safeguard intellectual property assets.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] border-b border-slate-100 pb-3">
+              2. Mandatory Welfare Thresholds and Benefits
+            </h2>
+            <p>
+              Tanzanian statutory frameworks map out strict, mandatory baselines for employee management that corporate leadership cannot contract out of. Compliance checks verify that corporate payroll structures align correctly with minimum wage parameters, overtime formulas, and public holiday allowances.
+            </p>
+            <div class="bg-[#0F2D52]/[0.015] border border-[#0F2D52]/5 p-6 rounded-[12px] space-y-3 my-6">
+              <p class="text-xs uppercase tracking-widest font-bold text-[#0F2D52]">Enterprise Compliance Priorities:</p>
+              <ul class="space-y-2 text-sm text-slate-500 font-light pl-1">
+                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-[#C8A34D] rounded-full"></span> Monthly contributions to the National Social Security Fund (NSSF)</li>
+                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-[#C8A34D] rounded-full"></span> Strict remittance of the Skills Development Levy (SDL) based on total personnel count</li>
+                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-[#C8A34D] rounded-full"></span> Implementation of statutory maternal, paternal, and paid sick leave cycles</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] border-b border-slate-100 pb-3">
+              3. Lawful Termination of Service and Due Process
+            </h2>
+            <p>
+              Unlawful termination claims represent one of the highest litigation risks for corporate enterprises in Tanzania. Discharging personnel requires strict adherence to both substantive justification and procedural fairness. Substantive elements command that separation must rest purely upon operational capacity, misconduct, or structural redundancy.
+            </p>
+            <p>
+              Procedurally, an employer must execute clear verbal and written warnings, conduct documented disciplinary hearings, and afford the employee direct right to representation. Failing to follow these consecutive structural stages allows the **Commission for Mediation and Arbitration (CMA)** to impose hefty compensation awards against your enterprise capital.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-normal text-[#0F2D52] tracking-tight font-['Playfair_Display',serif] border-b border-slate-100 pb-3">
+              4. Managing Redundancy and Corporate Restructuring
+            </h2>
+            <p>
+              When economic shifts or market changes require a company to scale down, executing operational redundancies demands close oversight from senior legal counsel. Employers must issue an explicit, formal notice of intention to the relevant trade unions and the Labor Commissioner at least 30 days prior.
+            </p>
+            <p>
+              This warning track launches mandatory consultation loops to evaluate options for avoiding workforce reductions. If restructuring proceeds, the business must calculate terminal benefits perfectly—including statutory severance pay, notice path payouts, and accumulated leave compensation—to secure an unassailable legal position.
+            </p>
+          </section>
+
+          <!-- Article Share Footer Element -->
+          <div class="pt-8 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="text-xs text-slate-400">Published by: <span class="font-bold text-[#0F2D52]">Employment & Labor Relations Practice Group</span></div>
+            <div class="flex items-center gap-3">
+               </div>
+          </div>
+
+        </div>
+
+        <!-- CONVERSION-FOCUSED HIGH-NET-WORTH SIDEBAR -->
+        <aside class="lg:col-span-4 lg:sticky lg:top-28 space-y-8">
+          
+          <!-- Tactical Intake Card Component Container Box -->
+          <div class="bg-[#0F2D52] text-white p-8 rounded-[12px] shadow-[0_20px_40px_rgba(15,45,82,0.12)] space-y-6 relative overflow-hidden border border-[#C8A34D]/20">
+            <div class="absolute inset-0 bg-[radial-gradient(#C8A34D_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.03]"></div>
+            
+            <div class="space-y-2 relative z-10">
+              <span class="text-[10px] uppercase tracking-widest font-bold text-[#C8A34D] block">Secure Representation</span>
+              <h3 class="text-2xl font-normal tracking-tight font-['Playfair_Display',serif] leading-tight text-white">
+                Initiate Labor Audit
+              </h3>
+              <p class="text-xs text-white/70 leading-relaxed font-light">
+                Arrange a confidential labor compliance audit or schedule an employment contract review session with our senior labor law partners.
+              </p>
+            </div>
+
+            <!-- Privilege Intake Form Parameters Structure -->
+            <form class="space-y-4 relative z-10 text-slate-800">
+              <input type="text" placeholder="Executive Name & Title" required class="w-full bg-white/95 px-4 py-3 border border-white/10 rounded-[12px] text-sm focus:outline-none focus:ring-1 focus:ring-[#C8A34D]">
+              <input type="email" placeholder="Corporate Email Address" required class="w-full bg-white/95 px-4 py-3 border border-white/10 rounded-[12px] text-sm focus:outline-none focus:ring-1 focus:ring-[#C8A34D]">
+              <textarea placeholder="Outline brief parameters (e.g., contract structuring, union disputes)..." rows="3" required class="w-full bg-white/95 px-4 py-3 border border-white/10 rounded-[12px] text-sm focus:outline-none focus:ring-1 focus:ring-[#C8A34D]"></textarea>
+              
+              <button type="submit" class="w-full bg-[#C8A34D] text-white text-xs uppercase tracking-widest font-bold py-4 rounded-[12px] hover:bg-white hover:text-[#0F2D52] transition-colors duration-300 shadow-lg cursor-pointer">
+                Submit Privileged Brief
+              </button>
+            </form>
+          </div>
+
+          <!-- Author Biography Component Card Module -->
+          <div class="bg-white border border-[#0F2D52]/5 p-6 rounded-[12px] shadow-[0_8px_30px_rgba(15,45,82,0.01)] flex items-center gap-4">
+            <img src="thumbnails/advoc.jpeg" alt="John Mwangi - Employment Law Specialist" class="w-16 h-16 object-cover rounded-[12px] border border-[#0F2D52]/10">
+            <div class="space-y-0.5">
+              <p class="text-xs uppercase tracking-widest font-bold text-[#C8A34D]">Author</p>
+              <h4 class="font-normal text-base text-[#0F2D52] font-['Playfair_Display',serif]">John Mwangi</h4>
+              <p class="text-xs text-slate-400 font-light">Senior Partner, Employment & Labor Relations</p>
+            </div>
+          </div>
+
+        </aside> <!-- Close Sidebar -->
+
+      </div> <!-- Close Grid Layout Matrix -->
+    </article> <!-- Close Article Content Max Width -->
+  </main> <!-- Close Main Content Window -->
+
+  <!-- GLOBAL SITE FOOTER -->
+<footer class="bg-[#0F2D52] text-white pt-20 pb-10 border-t-2 border-[#C8A34D] relative overflow-hidden font-['Inter',sans-serif]">
+  
+  <!-- Subtle background layout motif accent for expensive texture -->
+  <div class="absolute inset-0 bg-[radial-gradient(#C8A34D_0.5px,transparent_0.5px)] [background-size:32px_32px] opacity-[0.03]"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-12 md:gap-8 lg:gap-12">
+
+      <!-- Column 1: Logo + Core Corporate Profile (4 Columns wide on Desktop) -->
+      <div class="col-span-2 md:col-span-4 space-y-6">
+        <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-0.5 font-['Playfair_Display',serif]">
+          ACCURATE </br> <span class="text-[#C8A34D] font-normal"> LAW CHAMBERS</span><span class="text-[#C8A34D] font-black text-3xl leading-none">.</span>
+        </a>
+        <p class="text-sm text-white/60 leading-relaxed font-light max-w-sm">
+          Providing premier legal representation and elite multi-jurisdictional strategic counsel across East Africa with an unwavering commitment to integrity, precision, and client asset protection.
+        </p>
+        
+        <!-- Social Icon Vector Badges: Configured to our strict 12px rounded rule -->
+        <div class="flex gap-3 pt-2">
+          <!-- LinkedIn Vector Node -->
+          <a href="#" class="w-10 h-10 border border-white/10 bg-white/5 rounded-[12px] flex items-center justify-center text-white/60 hover:text-[#C8A34D] hover:border-[#C8A34D]/40 hover:bg-white/10 transition-all duration-300" aria-label="LinkedIn Profile">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <!-- X Vector Node -->
+          <a href="#" class="w-10 h-10 border border-white/10 bg-white/5 rounded-[12px] flex items-center justify-center text-white/60 hover:text-[#C8A34D] hover:border-[#C8A34D]/40 hover:bg-white/10 transition-all duration-300" aria-label="X Profile">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Practice Areas Links (3 Columns wide on Desktop) -->
+      <div class="col-span-1 md:col-span-3">
+        <h3 class="text-xs uppercase tracking-[0.15em] font-bold text-white/90 mb-6 border-l-2 border-[#C8A34D] pl-3">
+          Practice Areas
+        </h3>
+        <ul class="space-y-3 text-sm text-white/60 font-light">
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Corporate & M&A Law</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Family & Wealth Protection</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Executive Regulatory Defense</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Civil & Commercial Trials</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Infrastructure & Property Law</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">IP & Global Tax Advisory</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Navigation Quick Links (2 Columns wide on Desktop) -->
+      <div class="col-span-1 md:col-span-2">
+        <h3 class="text-xs uppercase tracking-[0.15em] font-bold text-white/90 mb-6 border-l-2 border-[#C8A34D] pl-3">
+          Quick Links
+        </h3>
+        <ul class="space-y-3 text-sm text-white/60 font-light">
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Chamber Overview</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Our Advocates</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Track Record</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Legal Intelligence</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Secure Intake Portal</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Compliance + Policies (3 Columns wide on Desktop) -->
+      <div class="col-span-2 md:col-span-3">
+        <h3 class="text-xs uppercase tracking-[0.15em] font-bold text-white/90 mb-6 border-l-2 border-[#C8A34D] pl-3">
+          Regulatory Info
+        </h3>
+        <ul class="space-y-3 text-sm text-white/60 font-light mb-6">
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Privacy & Data Protections</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Terms of Engagement</a></li>
+          <li><a href="#" class="hover:text-[#C8A34D] transition-colors duration-200 block">Client Retainer Policy</a></li>
+        </ul>
+        <!-- Statutory Professional Notice Disclaimer Layout -->
+        <p class="text-[10px] text-white/40 leading-relaxed font-light border-t border-white/5 pt-4">
+          Disclaimer: Information presented across this institutional portal is compiled for educational brief indexing indices only and does not establish a formal or binding advocate-client relationship.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar Container Grid -->
+    <div class="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 font-light gap-4">
+      <p>© 2026 Accurate Law Chambers. All rights reserved.</p>
+      </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
