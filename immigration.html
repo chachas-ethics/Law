@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Law Firm</title>
+   <link rel="icon" href="thumbnails/image_bff3f466.jpg" type="image/x-icon">
+  <title>ACCURATE LAW CHAMBERS</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,10 +24,11 @@
     }
   </script>
 </head>
+
 <body class="bg-white text-slate-800 font-['Inter',sans-serif] selection:bg-[#C8A34D]/20 selection:text-[#0F2D52]">
 
 <header class="w-full bg-[#f4efef] border-b border-[#0F2D52]/5 sticky top-0 z-50 backdrop-blur-md shadow-[0_4px_30px_rgba(15,45,82,0.02)] transition-all duration-300"> 
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between font-['Inter',sans-serif]"> 
+  <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between font-['Inter',sans-serif]"> 
     
     <!-- Logo --> 
     <a href="#home" class="flex items-center gap-2 group focus:outline-none" aria-label="Law Firm Home"> 
@@ -305,5 +308,95 @@
   </div>
 </footer>
 
+
+  <script>
+    const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mobileMenu");
+const spans = btn.querySelectorAll("span");
+const mobileLinks = menu.querySelectorAll(".mobile-link");
+
+// Centralized function to open and close the menu cleanly
+function toggleMenu() {
+  // Matches your specific custom offset distance class
+  menu.classList.toggle("-translate-x-full");
+
+  // Toggle the Hamburger to 'X' states safely via indexes
+  spans[0].classList.toggle("rotate-45");
+  spans[0].classList.toggle("translate-x-[3px]");
+  spans[0].classList.toggle("-translate-y-[1px]");
+  
+  spans[1].classList.toggle("opacity-0");
+  
+  spans[2].classList.toggle("-rotate-45");
+  spans[2].classList.toggle("translate-x-[3px]");
+  spans[2].classList.toggle("translate-y-[1px]");
+}
+
+// Click listener for the main menu toggle button
+btn.addEventListener("click", toggleMenu);
+
+// Loop through each link to automatically close the menu panel upon click
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    // Only trigger close if the menu panel is currently visible/open
+    if (!menu.classList.contains("-translate-x-full")) {
+      toggleMenu();
+    }
+  });
+});
+
+
+    const toggles = document.querySelectorAll(".faq-toggle");
+
+    toggles.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector("span:last-child");
+
+        content.classList.toggle("hidden");
+        icon.textContent = content.classList.contains("hidden") ? "+" : "−";
+      });
+    });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("caseBriefingForm");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const caseBrief = document.getElementById("caseBrief").value.trim();
+
+        const message = `NEW CASE BRIEFING REQUEST
+
+Full Name:
+${fullName}
+
+Email:
+${email}
+
+Phone:
+${phone}
+
+Case Brief:
+${caseBrief}`;
+
+        // Replace with your WhatsApp number
+        const whatsappNumber = "255788296274";
+
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, "_blank");
+
+        form.reset();
+    });
+});
+
+    
+/* ios hover */
+ document.addEventListener("touchstart", function() {}, true);
+  </script>
 </body>
 </html>

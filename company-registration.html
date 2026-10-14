@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Law Firm</title>
+   <link rel="icon" href="thumbnails/image_bff3f466.jpg" type="image/x-icon">
+  <title>ACCURATE LAW CHAMBERS</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,36 +23,12 @@
     }
   </script>
 </head>
+
 <body class="bg-white text-slate-800 font-['Inter',sans-serif] selection:bg-[#C8A34D]/20 selection:text-[#0F2D52]">
 
   <!-- STICKY HEADER -->
-  <header class="w-full bg-white/90 border-b border-[#0F2D52]/5 sticky top-0 z-50 backdrop-blur-md shadow-[0_4px_30px_rgba(15,45,82,0.01)]">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 group">
-        <img src="thumbnails/ALC.jpeg" alt="Corporate Law Chambers Logo" class="h-9 sm:h-10 w-auto object-contain" />
-      </a>
-      <nav class="hidden md:flex items-center gap-10 text-[14px] font-medium tracking-wide text-[#0F2D52]/90">
-        <a href="index.html" class="hover:text-[#C8A34D] transition-colors py-2">Home</a>
-        <a href="#" class="hover:text-[#C8A34D] transition-colors py-2">About</a>
-        <a href="#" class="hover:text-[#C8A34D] transition-colors py-2">Practice Areas</a>
-        <a href="#" class="text-[#C8A34D] py-2">Insights</a>
-        <a href="#" class="hover:text-[#C8A34D] transition-colors py-2">Contact</a>
-      </nav>
-      <a href="#" class="hidden md:inline-flex bg-[#C8A34D] text-white text-xs uppercase tracking-widest font-bold px-6 py-3.5 rounded-[12px] shadow-[0_4px_14px_rgba(200,163,77,0.25)] hover:bg-[#0F2D52] transition-all duration-300 transform hover:-translate-y-0.5">
-        Free Consultation
-      </a>
-    </div>
-  </header>
-
-  <!-- INSIGHTS ARTICLE HERO -->
-  <main class="py-12 sm:py-16 lg:py-20">
-    <article class="max-w-7xl mx-auto px-6">
-      
-      <!-- Breadcrumb Navigation Loop -->
-    
-
 <header class="w-full bg-[#f4efef] border-b border-[#0F2D52]/5 sticky top-0 z-50 backdrop-blur-md shadow-[0_4px_30px_rgba(15,45,82,0.02)] transition-all duration-300"> 
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between font-['Inter',sans-serif]"> 
+  <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between font-['Inter',sans-serif]"> 
     
     <!-- Logo --> 
     <a href="#home" class="flex items-center gap-2 group focus:outline-none" aria-label="Law Firm Home"> 
@@ -103,6 +80,28 @@
 
 
 </header>
+
+  <!-- INSIGHTS ARTICLE HERO -->
+  <main class="py-12 sm:py-16 lg:py-20">
+    <article class="max-w-7xl mx-auto px-6">
+      
+     <!-- Main Metadata Header -->
+<header class="max-w-4xl space-y-6 mb-12">
+    <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-[#C8A34D]">
+        <span class="bg-[#C8A34D]/10 px-3 py-1 rounded-[6px]">Corporate Law</span>
+        <span class="text-slate-400 font-normal">July 2026</span>
+    </div>
+    
+    <h1 class="text-3xl sm:text-4xl lg:text-[48px] font-normal leading-[1.2] text-[#0F2D52] tracking-tight font-['Playfair_Display',serif]">
+        How to Register a Company in Tanzania: <span class="italic font-light text-[#C8A34D]">An Executive Guide</span>
+    </h1>
+    
+    <p class="text-slate-600 text-lg sm:text-xl leading-relaxed font-light border-l-2 border-[#C8A34D] pl-6 py-1">
+        A meticulous overview detailing complex structural legal prerequisites, mandatory BRELA architectural submissions, statutory tax registration milestones, and local regulatory licensing paths.
+    </p>
+</header>
+
+
       <!-- Featured Image Display (12px rounded corner rule) -->
       <div class="w-full aspect-[21/9] rounded-[12px] overflow-hidden shadow-[0_20px_50px_rgba(15,45,82,0.04)] mb-16 border border-[#0F2D52]/5">
         <img src="thumbnails/registrationcomp.jpg" alt="Corporate board members mapping corporate legal registration framework in Tanzania" class="w-full h-full object-cover">
@@ -308,6 +307,96 @@
   </div>
 </footer>
 
+
+  <script>
+    const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mobileMenu");
+const spans = btn.querySelectorAll("span");
+const mobileLinks = menu.querySelectorAll(".mobile-link");
+
+// Centralized function to open and close the menu cleanly
+function toggleMenu() {
+  // Matches your specific custom offset distance class
+  menu.classList.toggle("-translate-x-full");
+
+  // Toggle the Hamburger to 'X' states safely via indexes
+  spans[0].classList.toggle("rotate-45");
+  spans[0].classList.toggle("translate-x-[3px]");
+  spans[0].classList.toggle("-translate-y-[1px]");
+  
+  spans[1].classList.toggle("opacity-0");
+  
+  spans[2].classList.toggle("-rotate-45");
+  spans[2].classList.toggle("translate-x-[3px]");
+  spans[2].classList.toggle("translate-y-[1px]");
+}
+
+// Click listener for the main menu toggle button
+btn.addEventListener("click", toggleMenu);
+
+// Loop through each link to automatically close the menu panel upon click
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    // Only trigger close if the menu panel is currently visible/open
+    if (!menu.classList.contains("-translate-x-full")) {
+      toggleMenu();
+    }
+  });
+});
+
+
+    const toggles = document.querySelectorAll(".faq-toggle");
+
+    toggles.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector("span:last-child");
+
+        content.classList.toggle("hidden");
+        icon.textContent = content.classList.contains("hidden") ? "+" : "−";
+      });
+    });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("caseBriefingForm");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const caseBrief = document.getElementById("caseBrief").value.trim();
+
+        const message = `NEW CASE BRIEFING REQUEST
+
+Full Name:
+${fullName}
+
+Email:
+${email}
+
+Phone:
+${phone}
+
+Case Brief:
+${caseBrief}`;
+
+        // Replace with your WhatsApp number
+        const whatsappNumber = "255788296274";
+
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, "_blank");
+
+        form.reset();
+    });
+});
+
+    
+/* ios hover */
+ document.addEventListener("touchstart", function() {}, true);
+  </script>
 </body>
 </html>
 
